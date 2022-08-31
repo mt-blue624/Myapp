@@ -1,66 +1,70 @@
 <template>
     <div>
-      <p></p>
       <div class="fixed-bottom bg-dark text-white" v-bind:style="{ opacity: 0.75 }">
-        <span>&nbsp;</span>
-        <span>{{ status }}</span>
+        {{ status }}
       </div>
       
-      <h3>投稿</h3>
-      <p></p>
-      <form v-on:submit.prevent="handleInsert">
-        <input type="text" class="form-control" placeholder="名前" v-model="name" />
-        <textarea class="form-control" rows="5" placeholder="コメントを入力します。" v-model="comment" />
-        <input type="submit" value="登録" class="btn btn-primary" />
-      </form>        
-      <p />
+      <div class="post__box">
+        <div class="container">
+          <h2 class="post__ttl"><span>NEW THREAD</span>投稿</h2>
+          <p></p>
+          <form v-on:submit.prevent="handleInsert">
+            <input type="text" class="form-control" placeholder="名前" v-model="name" />
+            <textarea class="form-control" rows="5" placeholder="コメントを入力します。" v-model="comment" />
+            <input type="submit" value="登録" class="btn btn-primary" />
+          </form>        
+          <p />
+        </div>
+      </div>
       
-      <h3>一覧</h3>
-      <p></p>
-      <div class="card-columns">
-        <div v-for="(item, index) in items">    
-        
-          <!-- 表示モード -->
-          <template v-if="!mode[index]">
-            <div v-bind:key="item.id" class="card"> 
-              <div class="card-header">
-                {{ item.name }} <br />{{ formatConversion(item.updated_at) }}
-              </div>
-              <div class="card-body">
-                {{ item.comment }}
-                <br />
-                <br />
-                <form>
-                  @csrf
-                  <div v-bind:style="{ textAlign: 'right' }"> 
-                    <input type="submit" value="編集" class="btn btn-primary" v-on:click.prevent="$root.$set(mode, index, !mode[index])" />&nbsp;
-                    <input type="submit" value="削除" class="btn btn-danger" v-on:click.prevent="handleDelete(index, item.id, $event)" />&nbsp;&nbsp;
-                  </div> 
-                </form>
-              </div>    
-            </div>
-          </template>  
-          
-          <!-- 編集モード -->
-          <template v-else>
-            <div v-bind:key="item.id" class="card">  
-              <form v-on:submit.prevent="handleUpdate(index, item.id, $event)">
-                <div class="card-header">
-                  <input type="text" v-bind:value="item.name" name="txt_name" class="form-control" />
-                </div>
-                <div class="card-body">
-                  <textarea v-bind:value="item.comment" name="txt_comment" class="form-control" rows="5" />                      
-                </div>
-                <div v-bind:style="{ textAlign: 'right' }">
-                  <input type="submit" value="キャンセル" class="btn btn-secondary" v-on:click.prevent="$root.$set(mode,index,!mode[index])" />&nbsp;
-                  <input type="submit" value="更新" class="btn btn-primary" />&nbsp;&nbsp;
-                </div>
-                <p />
-              </form>
-            </div> 
-          </template>   
+      <div class="post__archive">
+        <div class="container">
+          <h2 class="post__ttl"><span>ARCHIVE</span>投稿一覧</h2>
+          <p></p>
+          <div class="post__card-wrap">
+            <div v-for="(item, index) in items" class="post__card">    
             
-        </div>  
+              <!-- 表示モード -->
+              <template v-if="!mode[index]">
+                <div v-bind:key="item.id" class="card"> 
+                  <div class="card-header">
+                    {{ item.name }} <br />{{ formatConversion(item.updated_at) }}
+                  </div>
+                  <div class="card-body">
+                    <div>{{ item.comment }}</div>
+                    <br />
+                    <form>
+                      <div v-bind:style="{ textAlign: 'right' }" class="btn-box"> 
+                        <input type="submit" value="編集" class="btn btn-primary" v-on:click.prevent="$root.$set(mode, index, !mode[index])" />&nbsp;
+                        <input type="submit" value="削除" class="btn btn-danger" v-on:click.prevent="handleDelete(index, item.id, $event)" />&nbsp;&nbsp;
+                      </div> 
+                    </form>
+                  </div>    
+                </div>
+              </template>  
+              
+              <!-- 編集モード -->
+              <template v-else>
+                <div v-bind:key="item.id" class="card">  
+                  <form v-on:submit.prevent="handleUpdate(index, item.id, $event)">
+                    <div class="card-header">
+                      <input type="text" v-bind:value="item.name" name="txt_name" class="form-control" />
+                    </div>
+                    <div class="card-body">
+                      <textarea v-bind:value="item.comment" name="txt_comment" class="form-control" rows="5" />                      
+                    </div>
+                    <div v-bind:style="{ textAlign: 'right' }">
+                      <input type="submit" value="キャンセル" class="btn btn-secondary" v-on:click.prevent="$root.$set(mode,index,!mode[index])" />&nbsp;
+                      <input type="submit" value="更新" class="btn btn-primary" />&nbsp;&nbsp;
+                    </div>
+                    <p />
+                  </form>
+                </div> 
+              </template>   
+                
+            </div>  
+          </div>
+        </div>
       </div>
     </div>
     </template>

@@ -1,0 +1,119 @@
+* {
+  font-family: "Noto Sans JP", serif;
+}
+
+.header {
+  background-color: #fff !important;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.06);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header .nav-link {
+  color: #36ac1a !important;
+}
+
+.navbar-brand {
+  margin: 0;
+}
+
+.post__ttl {
+  font-size: 1.55rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+}
+
+.post__ttl span {
+  display: block;
+  color: #36ac1a;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.post__box {
+  background-color: #FAFAFA;
+  padding: 50px 0;
+}
+
+.post__box form textarea {
+  margin: 10px 0;
+}
+
+.post__archive {
+  padding: 50px 0;
+}
+
+.post__card-wrap {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.post__card-wrap:after {
+  content: "";
+  display: block;
+  width: 32%;
+}
+
+.post__card {
+  width: 32%;
+  margin-bottom: 25px;
+}
+
+@media screen and (max-width: 993px) {
+  .post__card {
+    width: 49%;
+  }
+}
+
+@media screen and (max-width: 769px) {
+  .post__card {
+    width: 100%;
+  }
+}
+
+.post__card .btn-box {
+  margin-top: auto;
+}
+
+.card {
+  height: 100%;
+}
+
+.card-header {
+  background-color: #FAFAFA;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+}
+
+.card-body form {
+  margin-top: auto;
+}
+
+.fixed-bottom {
+  padding: 1px 15px;
+}
+
+@media screen and (max-width: 769px) {
+  .fixed-bottom {
+    font-size: 15px;
+    padding: 1px 10px;
+  }
+}
+
+.footer {
+  color: #36ac1a !important;
+  font-size: 12px;
+  background-color: #EDFAEA !important;
+  padding: 20px 0;
+  margin-bottom: 20px;
+}
+
+.footer p {
+  margin: 0;
+}
+
