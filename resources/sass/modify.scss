@@ -16,6 +16,7 @@
 
 * {
   font-family: 'Noto Sans JP', serif;
+  color: #2C2C2C;
 }
 
 .header {
@@ -27,10 +28,26 @@
   .nav-link {
     color: #36ac1a!important;
   }
+  .navbar-brand {
+    margin: 0;
+    a {
+      color: #2C2C2C;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
 }
-.navbar-brand {
-  margin: 0;
+
+.btn-primary {
+  background-color: #36ac1a;
+  border-color: #36ac1a;
+  &:hover {
+    background-color: rgba(54, 172, 26, .8);
+    border-color: #36ac1a;
+  }
 }
+
 
 
 .post {
@@ -80,6 +97,20 @@
       margin-top: auto;
     }
   }
+  &__detail {
+    padding: 50px 0;
+    .card {
+      margin: 30px 0;
+    }
+    .card-header {
+      p {
+        margin: 0;
+      }
+    }
+    .card-body {
+      padding: 30px 20px;
+    }
+  }
 }
 
 .card {
@@ -105,12 +136,13 @@
 }
 
 .footer {
-  color: #36ac1a!important;
   font-size: 12px;
   background-color: #EDFAEA!important;
-  padding: 20px 0;
   margin-bottom: 20px;
   p {
+    color: #36ac1a!important;
+    padding: 10px 0;
     margin: 0;
+    letter-spacing: .1em;
   }
 }

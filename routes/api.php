@@ -13,13 +13,8 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
-
-// Route::group(['middleware' => ['api', 'cors']], function(){
-//     Route::options('articles', function() {
-//         return response()->json();
-//     });
-//     Route::resource('articles', 'Api\ArticlesController');
+// Route::middleware('auth:api')->get('/user', function (Request $request) {
+//     return $request->user();
 // });
+
+

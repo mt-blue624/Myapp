@@ -22,8 +22,8 @@
 
 {{-- ヘッダ --}}
 <nav class="navbar navbar-expand-md navbar-light bg-primary header">
-  <h1 class="navbar-brand">
-    掲示板
+  <h1 class="navbar-brand">   
+    <a href="<?= url('/');?>">掲示板</a>
   </h1>
   <ul class="navbar-nav ml-auto">
     <li class="nav-item">

@@ -2242,9 +2242,13 @@ var render = function render() {
       staticClass: "card"
     }, [_c("div", {
       staticClass: "card-header"
-    }, [_vm._v("\n                " + _vm._s(item.name) + " "), _c("br"), _vm._v(_vm._s(_vm.formatConversion(item.updated_at)) + "\n              ")]), _vm._v(" "), _c("div", {
+    }, [_c("a", {
+      attrs: {
+        href: "/".concat(item.id)
+      }
+    }, [_vm._v(_vm._s(item.name) + " ")]), _vm._v(" "), _c("br"), _vm._v(_vm._s(_vm.formatConversion(item.updated_at)) + "\n              ")]), _vm._v(" "), _c("div", {
       staticClass: "card-body"
-    }, [_c("div", [_vm._v(_vm._s(item.comment))]), _vm._v(" "), _c("br"), _vm._v(" "), _c("form", [_c("div", {
+    }, [_c("div", [_vm._v(_vm._s(item.comment))]), _vm._v(" "), _c("div", [_vm._v(_vm._s(item.message))]), _vm._v(" "), _c("br"), _vm._v(" "), _c("form", [_c("div", {
       staticClass: "btn-box",
       style: {
         textAlign: "right"
@@ -46907,7 +46911,8 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js"); // IEでV
 __webpack_require__(/*! @babel/polyfill */ "./node_modules/@babel/polyfill/lib/index.js"); // Vue.js
 
 
-window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
+window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js"); //  import VueRouter from 'vue-router';
+
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
@@ -46915,8 +46920,8 @@ window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.
  *
  * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
  */
-// const files = require.context('./', true, /\.vue$/i)
-// files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
+//  const files = require.context('./', true, /\.vue$/i)
+//  files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 // Vueコンポーネント
 
 Vue.component('vue-curd-component', __webpack_require__(/*! ./components/VueCurdComponent.vue */ "./resources/js/components/VueCurdComponent.vue")["default"]);

@@ -15,5 +15,6 @@ class DatabaseSeeder extends Seeder
             // 追加分
             VueCrudDataBkTableSeeder::class,
         ]);
+        $this->call(MessagesTableSeeder::class);
     }
 }

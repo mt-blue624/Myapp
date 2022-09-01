@@ -17,3 +17,8 @@ Route::put('/{id}', 'VueCrudDataController@update');
 Route::delete('/{id}', 'VueCrudDataController@destroy');
 
 Route::get('init', 'VueCrudDataController@init');
+
+// 詳細ページ
+Route::get('/{id}', 'VueCrudDataController@show');
+
+Route::resource('message', 'MessagesController', ['only' => ['store']]);

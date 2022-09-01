@@ -9,6 +9,7 @@
           <h2 class="post__ttl"><span>NEW THREAD</span>投稿</h2>
           <p></p>
           <form v-on:submit.prevent="handleInsert">
+            
             <input type="text" class="form-control" placeholder="名前" v-model="name" />
             <textarea class="form-control" rows="5" placeholder="コメントを入力します。" v-model="comment" />
             <input type="submit" value="登録" class="btn btn-primary" />
@@ -28,10 +29,12 @@
               <template v-if="!mode[index]">
                 <div v-bind:key="item.id" class="card"> 
                   <div class="card-header">
-                    {{ item.name }} <br />{{ formatConversion(item.updated_at) }}
+                    <a v-bind:href="`/${item.id}`">{{ item.name }} </a>
+                    <br />{{ formatConversion(item.updated_at) }}
                   </div>
                   <div class="card-body">
                     <div>{{ item.comment }}</div>
+                    <div>{{ item.message }}</div>
                     <br />
                     <form>
                       <div v-bind:style="{ textAlign: 'right' }" class="btn-box"> 

@@ -23,6 +23,7 @@
     "dependencies": {
         "@babel/polyfill": "^7.12.1",
         "date-fns": "^2.16.1",
-        "formdata-polyfill": "^3.0.20"
+        "formdata-polyfill": "^3.0.20",
+        "vue-router": "^3.6.4"
     }
 }

@@ -21,6 +21,8 @@ class CreateVueCrudDataTable extends Migration
             $table->string('name');
             // コメント
             $table->text('comment');
+
+            // $table->unsignedInteger('reply_count');
             
             $table->timestamps();
         });

@@ -47,6 +47,7 @@ class VueCrudDataController extends Controller
 
     public function store(Request $request)
     {
+     
         // パラメータ
         $param = [
             'name'     => $request->name,  
@@ -117,5 +118,12 @@ class VueCrudDataController extends Controller
         // エラー時
         DB::rollback();
         return response()->json(['msg' => 'Ajaxによるデータの削除が失敗しました。']);  
+    }
+
+    public function show($id)
+    {
+        $thread = VueCrudData::find($id);
+
+        return view('show', compact('thread'));
     }
 }

@@ -1,5 +1,6 @@
 * {
   font-family: "Noto Sans JP", serif;
+  color: #2C2C2C;
 }
 
 .header {
@@ -14,8 +15,26 @@
   color: #36ac1a !important;
 }
 
-.navbar-brand {
+.header .navbar-brand {
   margin: 0;
+}
+
+.header .navbar-brand a {
+  color: #2C2C2C;
+}
+
+.header .navbar-brand a:hover {
+  text-decoration: none;
+}
+
+.btn-primary {
+  background-color: #36ac1a;
+  border-color: #36ac1a;
+}
+
+.btn-primary:hover {
+  background-color: rgba(54, 172, 26, 0.8);
+  border-color: #36ac1a;
 }
 
 .post__ttl {
@@ -77,6 +96,22 @@
   margin-top: auto;
 }
 
+.post__detail {
+  padding: 50px 0;
+}
+
+.post__detail .card {
+  margin: 30px 0;
+}
+
+.post__detail .card-header p {
+  margin: 0;
+}
+
+.post__detail .card-body {
+  padding: 30px 20px;
+}
+
 .card {
   height: 100%;
 }
@@ -106,14 +141,15 @@
 }
 
 .footer {
-  color: #36ac1a !important;
   font-size: 12px;
   background-color: #EDFAEA !important;
-  padding: 20px 0;
   margin-bottom: 20px;
 }
 
 .footer p {
+  color: #36ac1a !important;
+  padding: 10px 0;
   margin: 0;
+  letter-spacing: 0.1em;
 }
 
